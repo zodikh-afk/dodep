@@ -1,0 +1,120 @@
+body {
+  height: auto;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(26, 24, 24);
+  font-size: 16px;
+}
+
+
+/*header*/
+.header{
+  height: 150px;
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  border-radius: 0px 0px 30px 30px;
+}
+.header-cont{
+  display: flex;
+  padding: 25px 25px;
+  font-size: 30px;
+}
+.menu-bar{
+  display: flex;
+  padding-left: 20px;
+  padding-top: 25px;
+}
+.right-panel{
+  padding-left: 350px;
+  padding-top: 25px;
+} 
+.menu-bar a, .right-panel a{
+  text-decoration: none;
+  color: white; 
+  font-weight: bold;
+  margin: 0 30px;
+  transition: 0.5s all ease;
+} 
+.menu-bar a:hover{
+  color: rgb(175, 166, 32);
+  font-weight: bold;
+} 
+.right-panel a:hover{
+  color: rgb(175, 166, 32);
+} 
+
+
+
+/*main*/
+.recomend-1, .recomend-2{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.rec-1, .rec-2{
+  margin-top: 50px;
+  border-radius: 30px;
+  width: 1400px;
+  height: 472px;
+  display: block;
+}
+.recomend-1-1link, .recomend-2-2link{
+  text-decoration: none;  
+  color: white; 
+}
+.text-1, .text-2{
+  background-color: yellowgreen;
+  border-radius: 10px;  
+  position: absolute;
+  bottom: 25px;
+  left: 250px;
+  font-weight:600;
+  font-size: 35px;  
+}
+.title-1, .title-2{
+  position: absolute;
+  bottom: 100px;
+  left: 250px;
+  text-decoration: none;
+  color: white; 
+  font-weight: bold;
+  font-size: 50px;  
+}
+
+
+/*slot1*/
+.strilka-bl{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.strilka{
+  height: 75px;
+  width: 50px;
+  z-index: 10;
+}
+.buttom-start-bl{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px; 
+}
+.buttom-start{
+  font-weight: bold;
+  font-size: 30px;
+  color: aliceblue;
+  background-color: yellowgreen;
+  width: 150px;
+  border-radius: 10px; 
+    z-index: 10;  
+}
+.koleso-bl{
+  display: flex;
+  justify-content: center;
+border-radius: 540px;  
+  transform: rotate(3187.52deg);
+}
+.koleso{
+    transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+    transform-origin: center center;
+      z-index: 1;
+}
