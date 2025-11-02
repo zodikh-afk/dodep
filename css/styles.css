@@ -25,7 +25,7 @@ body {
   padding-top: 25px;
 }
 .right-panel{
-  padding-left: 300px;
+  padding-left: 750px;
   padding-top: 25px;
 } 
 .menu-bar a, .menu-bar-bott a, .right-panel a{
@@ -143,6 +143,7 @@ border-radius: 540px;
     transform-origin: center center;
       z-index: 1;
 }
+
 
 
 
