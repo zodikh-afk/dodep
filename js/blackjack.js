@@ -1,4 +1,3 @@
-// ==== Мінімальна гра Blackjack з балансом і ставками ====
 
 const fmt = new Intl.NumberFormat('uk-UA', { style: 'currency', currency: 'UAH', maximumFractionDigits: 0 });
 function money(n){ return fmt.format(n); }
@@ -134,10 +133,16 @@ function flipDealerHole(){
 async function startRound(){
   if (!(phase==='betting'||phase==='roundOver')) return;
   updateBetFromInput();
-  if (balance<currentBet){ setStatus('Недостатньо коштів.'); return; }
-  balance-=currentBet; totalBet=currentBet;
-  updateBalanceUI(); betValueEl.textContent=money(totalBet);
-  phase='dealing'; setButtons(); setStatus('Роздаємо...');
+  if (balance<currentBet){ 
+    setStatus('Недостатньо коштів.'); 
+    return; }
+  balance-=currentBet; 
+  totalBet=currentBet;
+  updateBalanceUI(); 
+  betValueEl.textContent=money(totalBet);
+  phase='dealing'; 
+  setButtons(); 
+  setStatus('Роздаємо...');
   dealerCardsEl.innerHTML=''; playerCardsEl.innerHTML='';
   playerHand=[]; dealerHand=[]; dealerHoleEl=null;
   dealerTotalEl.textContent='—'; playerTotalEl.textContent='—';
@@ -148,13 +153,21 @@ async function startRound(){
   setTotalsUI();
   const pv=handValue(playerHand), dv=handValue(dealerHand);
   if (pv.blackjack||dv.blackjack){
-    await sleep(300); flipDealerHole(); phase='dealerTurn'; setTotalsUI();
+    await sleep(300); 
+    flipDealerHole(); 
+    phase='dealerTurn'; 
+    setTotalsUI();
     if (pv.blackjack&&dv.blackjack){ balance+=totalBet; setStatus('Нічия (push).'); }
     else if (pv.blackjack){ balance+=Math.floor(totalBet*2.5); setStatus('Blackjack!'); }
     else setStatus('Дилер має Blackjack.');
-    updateBalanceUI(); phase='roundOver'; setButtons(); return;
+    updateBalanceUI(); 
+    phase='roundOver'; 
+    setButtons(); 
+    return;
   }
-  phase='playerTurn'; setStatus('Твій хід.'); setButtons();
+  phase='playerTurn'; 
+  setStatus('Твій хід.'); 
+  setButtons();
 }
 
 async function onHit(){
@@ -162,7 +175,8 @@ async function onHit(){
   actionLocked=true; setButtons();
   await dealCardTo(playerCardsEl,playerHand);
   const pv=handValue(playerHand); setTotalsUI();
-  if (pv.total>21){ setStatus('Перебір. Програш.'); flipDealerHole(); phase='roundOver'; }
+  if (pv.total>21){ setStatus('Перебір. Програш.'); 
+    flipDealerHole(); phase='roundOver'; }
   actionLocked=false; setButtons();
 }
 
@@ -173,24 +187,48 @@ async function onStand(){
 
 async function onDouble(){
   if (phase!=='playerTurn'||actionLocked) return;
-  balance-=currentBet; totalBet+=currentBet;
-  updateBalanceUI(); betValueEl.textContent=money(totalBet);
-  await dealCardTo(playerCardsEl,playerHand); setTotalsUI();
+  balance-=currentBet; 
+  totalBet+=currentBet;
+  updateBalanceUI(); 
+  betValueEl.textContent=money(totalBet);
+  await dealCardTo(playerCardsEl,playerHand); 
+  setTotalsUI();
   const pv=handValue(playerHand);
-  if (pv.total>21){ setStatus('Перебір після подвоєння.'); flipDealerHole(); phase='roundOver'; }
+  if (pv.total>21){ 
+    setStatus('Перебір після подвоєння.'); 
+    flipDealerHole(); 
+    phase='roundOver'; 
+  }
   else await goDealer();
 }
 
 async function goDealer(){
-  phase='dealerTurn'; flipDealerHole(); setTotalsUI();
+  phase='dealerTurn'; 
+  flipDealerHole(); 
+  setTotalsUI();
   let dv=handValue(dealerHand);
-  while(dv.total<17){ await dealCardTo(dealerCardsEl,dealerHand); dv=handValue(dealerHand); setTotalsUI(); }
+  while(dv.total<17){ 
+    await dealCardTo(dealerCardsEl,dealerHand); 
+    dv=handValue(dealerHand); setTotalsUI(); 
+  }
   const pv=handValue(playerHand);
-  if (dv.total>21){ balance+=totalBet*2; setStatus('Дилер перебрав — перемога!'); }
-  else if (pv.total>dv.total){ balance+=totalBet*2; setStatus('Твоя рука старша. Перемога!'); }
-  else if (pv.total===dv.total){ balance+=totalBet; setStatus('Нічия.'); }
+  if (dv.total>21){ 
+    balance+=totalBet*2; 
+    setStatus('Дилер перебрав — перемога!'); 
+  }
+  else if (pv.total>dv.total){ 
+    balance+=totalBet*2; 
+    setStatus('Твоя рука старша. Перемога!'); 
+  }
+  else if (pv.total===dv.total){ 
+    balance+=totalBet; 
+    setStatus('Нічия.'); 
+  }
   else setStatus('Дилер виграв.');
-  updateBalanceUI(); phase='roundOver'; actionLocked=false; setButtons();
+  updateBalanceUI(); 
+  phase='roundOver'; 
+  actionLocked=false; 
+  setButtons();
 }
 
 dealBtn.onclick=startRound;
@@ -202,8 +240,16 @@ quickBetButtons.forEach(b=>b.onclick=(e)=>{
   const add=e.target.dataset.add, all=e.target.dataset.set, clr=e.target.dataset.clear;
   if(all) betInput.value=String(balance);
   else if(clr) betInput.value=String(minBet);
-  else if(add){ betInput.value=String(parseInt(betInput.value||'0',10)+parseInt(add,10)); }
+  else if(add){ 
+    betInput.value=String(parseInt(betInput.value||'0',10)+parseInt(add,10)); 
+  }
   updateBetFromInput(); setButtons();
 });
-function init(){ shoe=buildShoe(); updateBalanceUI(); updateBetFromInput(); setTotalsUI(); setStatus('Зроби ставку й натисни «Роздати».'); setButtons(); }
+function init(){ 
+  shoe=buildShoe(); 
+  updateBalanceUI(); 
+  updateBetFromInput(); 
+  setTotalsUI(); 
+  setStatus('Зроби ставку й натисни «Роздати».'); 
+  setButtons(); }
 init();
