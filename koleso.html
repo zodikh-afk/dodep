@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Депай все</title>
+    <link rel="shortcut icon" href="images/casino.jpg" type="image/x-icon" />
+    <meta name="title" content="давай додеп" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-cont">
+        <img src="images/casino.jpg" style="width: 100px; height: 100px" />
+        <nav class="menu-bar">
+          <a class="linkmain" href="index.html"><span>Головна</span></a>
+          <a class="linkslots" href="koleso.html"><span>Колесо</span></a>
+          <a class="linksport" href="blackjack.html"><span>Блекджек</span></a>
+          <a class="linkrulets" href="slots.html"><span>Рулетки</span></a>
+        </nav>
+        <div class="right-panel">
+          <a class="linkslots" href="slots.html"><span>Увійти</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-container">
+      <h1>🎯 Колесо удачі</h1>
+
+      <div class="wheel-container">
+        <div id="koleso" class="wheel"></div>
+        <div class="pointer"></div>
+      </div>
+
+      <div class="controls">
+        <label>Ставка (₴): </label>
+        <input type="number" id="betAmount" min="1" value="10" />
+        <br />
+
+        <label>Тип ставки:</label>
+        <select id="betType">
+          <option value="red">Червоне</option>
+          <option value="black">Чорне</option>
+          <option value="number">На число (0–11)</option>
+        </select>
+
+        <input
+          type="number"
+          id="betNumber"
+          min="0"
+          max="11"
+          placeholder="Номер"
+          style="display: none"
+        />
+        <br />
+        <button id="spinBtn">Крутити!</button>
+      </div>
+
+      <div id="result"></div>
+    </main>
+
+    <script src="js/koleso.js"></script>
+  </body>
+</html>

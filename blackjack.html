@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блекджек — Депай все</title>
+  <link rel="shortcut icon" href="images/casino.jpg" type="image/x-icon">
+  <meta name="title" content="давай додеп">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blackjack.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-cont">
+      <img src="images/casino.jpg" style="width: 100px; height: 100px;">
+      <nav class="menu-bar">
+        <a class="linkmain" href="index.html"><span>Головна</span></a>
+        <a class="linkslots" href="koleso.html"><span>Колесо</span></a>
+        <a class="linksport" href="blackjack.html"><span>Блекджек</span></a>
+        <a class="linkrulets" href="slots.html"><span>Рулетки</span></a>
+      </nav>
+      <div class="right-panel">
+        <a class="linkslots" href="slots.html"><span>Увійти</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="table-card">
+      <div class="table-mat">
+        <div class="result-panel">
+          <div class="result-line">
+            <span class="label">Статус:</span>
+            <span id="statusText" class="value">Зроби ставку й натисни «Роздати»</span>
+          </div>
+          <div class="result-line subtle">
+            <span class="label">Поточна ставка:</span>
+            <span id="betValue" class="value">₴100</span>
+          </div>
+        </div>
+
+        <div class="hand-block">
+          <div class="hand-header">
+            <span class="hand-title">Дилер</span>
+            <span class="hand-score" id="dealerTotal">—</span>
+          </div>
+          <div class="cards" id="dealerCards"></div>
+        </div>
+
+        <div class="hand-block">
+          <div class="hand-header">
+            <span class="hand-title">Гравець</span>
+            <span class="hand-score" id="playerTotal">—</span>
+          </div>
+          <div class="cards" id="playerCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="controls-card">
+      <h2 class="card-title">Панель керування</h2>
+      <div class="balance-pill">Баланс: <span id="balanceValue">₴5 000</span></div>
+
+      <div class="field">
+        <label for="betAmount">Ставка, ₴</label>
+        <input id="betAmount" type="number" inputmode="numeric" min="10" step="10" value="100">
+      </div>
+
+      <div class="quick-bets">
+        <button class="chip" data-add="50">+50</button>
+        <button class="chip" data-add="100">+100</button>
+        <button class="chip" data-add="250">+250</button>
+        <button class="chip" data-add="500">+500</button>
+        <button class="chip ghost" data-set="all">Все</button>
+        <button class="chip ghost" data-clear="1">Скинути</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="actions">
+        <button id="dealBtn" class="btn primary full">Роздати</button>
+        <button id="hitBtn" class="btn full" disabled>Взяти</button>
+        <button id="standBtn" class="btn full" disabled>Залишитись</button>
+        <button id="doubleBtn" class="btn full" disabled>Подвоїти</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Депай все — демо-версія гри Blackjack</small>
+  </footer>
+
+  <script src="js/blackjack.js"></script>
+</body>
+</html>
