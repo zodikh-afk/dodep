@@ -1,0 +1,155 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  padding: 30px;
+}
+
+.table-card {
+  flex: 2;
+  background: #222;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  margin: 10px;
+}
+
+.controls-card {
+  flex: 1;
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.balance-pill {
+  background: #444;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: black;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.card.red { color: red; }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.btn {
+  background-color: rgb(175,166,32);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: rgb(220,210,60);
+}
+
+.btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.quick-bets .chip {
+  background: #333;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 50px;
+  margin: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.quick-bets .chip:hover {
+  background: rgb(175,166,32);
+}
+
+.field input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 8px;
+}
+
+.divider {
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+.card {
+  position: relative;
+  width: 70px;
+  height: 100px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 8px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-rank {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card-suit {
+  font-size: 20px;
+  align-self: flex-end;
+}
+
+.card.red {
+  color: #d22;
+}
+.card.black {
+  color: #111;
+}
+
+.card-back {
+  width: 70px;
+  height: 100px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6aa0ff, #a16eff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,257 @@
+body {
+  height: auto;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(26, 24, 24);
+  font-size: 16px;
+}
+
+
+/*header*/
+.header{
+  height: 150px;
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  border-radius: 0px 0px 30px 30px;
+}
+.header-cont{
+  display: flex;
+  padding: 25px 25px;
+  font-size: 30px;
+}
+.menu-bar{
+  display: flex;
+  padding-left: 20px;
+  padding-top: 25px;
+}
+.right-panel{
+  padding-left: 700px;
+  padding-top: 25px;
+} 
+.menu-bar a, .menu-bar-bott a, .right-panel a{
+  text-decoration: none;
+  color: white; 
+  font-weight: bold;
+  margin: 0 30px;
+  transition: 0.5s all ease;
+} 
+.menu-bar a:hover{
+  color: rgb(175, 166, 32);
+  font-weight: bold;
+} 
+.right-panel a:hover{
+  color: rgb(175, 166, 32);
+} 
+
+/*footer*/
+.footer{
+  margin-top: 100px;
+  height: 150px;
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+  border-radius: 30px 30px 0px 0px;
+}
+.footer-cont{
+  display: flex;
+  padding-left: 80%;
+  font-size: 30px;
+  padding-top: 25px;
+}
+.menu-bar-bott{
+  display: flex;
+  padding-right: 20px;
+  padding-top: 25px;
+
+}
+.menu-bar-bott a:hover{
+  color: rgb(175, 166, 32);
+  font-weight: bold;
+}
+
+
+
+/*main*/
+.recomend-1, .recomend-2{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.rec-1, .rec-2{
+  margin-top: 50px;
+  border-radius: 30px;
+  width: 1400px;
+  height: 472px;
+  display: block;
+}
+.recomend-1-1link, .recomend-2-2link{
+  text-decoration: none;  
+  color: white; 
+}
+.text-1, .text-2{
+  background-color: yellowgreen;
+  border-radius: 10px;  
+  position: absolute;
+  bottom: 25px;
+  left: 250px;
+  font-weight:600;
+  font-size: 35px;  
+}
+.title-1, .title-2{
+  position: absolute;
+  bottom: 100px;
+  left: 250px;
+  text-decoration: none;
+  color: white; 
+  font-weight: bold;
+  font-size: 50px;  
+}
+
+
+/*slot1*/
+.strilka-bl{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.strilka{
+  height: 75px;
+  width: 50px;
+  z-index: 10;
+}
+.buttom-start-bl{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px; 
+}
+.buttom-start{
+  font-weight: bold;
+  font-size: 30px;
+  color: aliceblue;
+  background-color: yellowgreen;
+  width: 150px;
+  border-radius: 10px; 
+    z-index: 10;  
+}
+.koleso-bl{
+  display: flex;
+  justify-content: center;
+border-radius: 540px;  
+  transform: rotate(3187.52deg);
+}
+
+
+/* Модальне вікно */
+.login-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  background-color: #222;
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 380px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  color: white;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.login-content h2 {
+  margin-bottom: 20px;
+}
+
+.login-content label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.login-content input,
+.login-content textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: yellowgreen;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: rgb(175, 166, 32);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: white;
+}
+
+.register-link {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.register-link a {
+  color: yellowgreen;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  color: rgb(175, 166, 32);
+}
+/* Повідомлення про успішну реєстрацію */
+.success-message {
+  display: none;
+  background-color: rgba(110, 185, 60, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
